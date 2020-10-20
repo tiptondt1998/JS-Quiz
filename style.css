@@ -1,0 +1,12 @@
+body{
+    background-color: blue;
+    color: black;
+    font-size: larger;
+}
+
+#start-btn{
+    background-color: white;
+    border-radius: 50%;
+    width: 200px;
+    height: 100px;
+}
