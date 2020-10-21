@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div>Time Remaining: <span id="time">05:00</span> minutes!</div>
+<style>
+    .styles{
+        color: red;
+        background-color: blue;
+    }
+    article {
+        color: black;
+    }
+    h3{
+        color: black;
+    }
+</style>
+<body id="body">
+    <div id="timer">Time Remaining: <span id="time">05:00</span> minutes!</div>
     <button id="subtract-btn">subtract time</button>
+
+    <section id="quiz-question" class="styles"> 
+        <button id="question-btn">generate question</button>
+        <article id="question"> 
+        </article>
+    </section>
+ 
 </body>
 <script src="./script.js"></script>
 </html>
