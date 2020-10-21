@@ -29,7 +29,6 @@ var firstQuestion = {
 question:"first question",
 answers: ["a1", "a2", "a3"]
 }
-
 var createQuiz = function(){
 //puts first question in que
 event.preventDefault();
@@ -63,9 +62,12 @@ para.appendChild(submitbtn);
 submitbtn.addEventListener("click",function(){
     var selected_answer = document.getElementById("select-option");
     var result = selected_answer.options[selected_answer.selectedIndex].text;
-    window.alert(result);
+    window.alert(result);  
+    createQuiz();
+    
     });
 document.getElementById("question").appendChild(para);
 
 };
+
 document.getElementById("question-btn").addEventListener("click", createQuiz);

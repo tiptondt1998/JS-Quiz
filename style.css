@@ -10,3 +10,9 @@ body{
     width: 200px;
     height: 100px;
 }
+button{
+    background-color: white;
+    border-radius: 50%;
+    width: 200px;
+    height: 100px;
+}
