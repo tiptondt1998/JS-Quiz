@@ -62,9 +62,8 @@ para.appendChild(submitbtn);
 submitbtn.addEventListener("click",function(){
     var selected_answer = document.getElementById("select-option");
     var result = selected_answer.options[selected_answer.selectedIndex].text;
-    window.alert(result);  
-    createQuiz();
-    
+    window.alert(result);
+    //createQuiz();
     });
 document.getElementById("question").appendChild(para);
 
