@@ -9,10 +9,29 @@ body{
     border-radius: 50%;
     width: 200px;
     height: 100px;
+    margin-left: 45%;
 }
-button{
+#title{
+    margin-left: 40%;
+    margin-top: 15%;
+}
+/* button{
     background-color: white;
     border-radius: 50%;
     width: 200px;
     height: 100px;
+    margin-left: 40%;
+}
+h1{
+    margin-left: 40%;
+} */
+@media screen and (max-width: 800px){
+
+    #title{
+      margin-left: 20%;  
+    }
+    #start-btn{
+        margin-left: 30%;
+    }
+
 }

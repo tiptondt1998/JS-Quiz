@@ -59,54 +59,79 @@
 //     }
 // }
 
+correctAnswers = 0;
+var questions = [
+    { q: 'JSON stands for JavaScript Object Notation.', a: 't' },
+    { q: 'Local variables are variables declared in a function that cannot be directly accessed outside of that function.', a: 't' },
+    { q: 'An if statement must always have an else statement.', a: 'f' }
+  ];
 
-createQuiz = function(){
-
-    var firstQuestion = {
-        question:"first question",
-        answer1: "a1",
-        answer2: "a2",
-        answer3: "a3"
-        }
-    var secondQuestion = {
-        question: "second question",
-        answer1: "b1", answer2: "b2", answer3: "b3"
-    }
-    var quiz =[firstQuestion, secondQuestion];
-
-    for(i=0;i<quiz.length;i++){
-        var currentQuestion = quiz[i].question;
-        var para = document.createElement("P");
-        para.innerHTML = currentQuestion;
+// createQuiz = function(){
+//     for(i=0;i<quiz.length;i++){
+//         var currentQuestion = quiz[i];
+//         var para = document.createElement("P");
+//         para.innerHTML = currentQuestion.question;
         
-        var dropbox = document.createElement('select');
-        dropbox.setAttribute("id","select-option");
-        dropbox.innerHTML ="<option value='answer1' id='first-answer'>" + currentQuestion.answer1 + "</option> <option value='answer2' id='second-answer'>" + currentQuestion.answer2 + "</option>";
-        para.appendChild(dropbox);
-        document.getElementById("quiz_body").appendChild(para);
-        // var dropbox = document.createElement('select');
-        // dropbox.setAttribute("id","select-option");
-        // dropbox.innerHTML =
-        // "<option value='first' id='first-answer'>"+currentQuestion.answer1
-        // +"</option> <option value='second'>"+currentQuestion.answer2+<option value='answer1' id='first-answer'" + currentQuestion.answer1 + "</option>
-        // "</option> <option value='third'>"+currentQuestion.answer3+"</option>";
-        // dropbox.value = currentQuestion.answer1;
-        // var label = document.createElement('label')
-        // para.appendChild(dropbox);
-        // //appends submit button to question
-        var submitbtn = document.createElement('button');
-        submitbtn.setAttribute("id","submit-btn");
-        submitbtn.innerHTML = "submit";
-        para.appendChild(submitbtn);
-        submitbtn.addEventListener("submit",function(){
-        var selected_answer = document.getElementById("select-option");
-        var result = selected_answer.options[selected_answer.selectedIndex].text;
-        window.alert(result);
+//         var dropbox = document.createElement('select');
+//         dropbox.setAttribute("id","select-option");
+//         dropbox.innerHTML ="<option value='answer1' id='first-answer'>" + currentQuestion.answer1 + "</option> <option value='answer2' id='second-answer'>" + currentQuestion.answer2 + "</option> <option value='answer2' id='second-answer'>" + currentQuestion.answer3 + "</option>";
+//         para.appendChild(dropbox);
+//         document.getElementById("quiz_body").appendChild(para);
+
+//     document.getElementById("quiz_body").appendChild(para);        
+//        }
+//     var submitbtn = document.createElement('button');
+//         submitbtn.setAttribute('id','submit-btn');
+//         submitbtn.innerHTML = "submit";
+//         document.getElementById("quiz_body").appendChild(submitbtn);
+//     submitbtn.addEventListener("click", function(){
+//         var selected_answer = document.getElementById("select-option");
+//         var result = selected_answer.options[selected_answer.selectedIndex].text;
+//         window.alert(result);
         
-        });
-        document.getElementById("quiz_body").appendChild(para);
+//         for(i = 0; i<1; i++){
+//         currentQuestion = quiz[i];
+//             if(result == currentQuestion.answer1){
+//             window.alert("correct");
+//             correctAnswers++;
+//             window.alert("Score is " + correctAnswers / quiz.length);
+//             }
+//             else{
+//             window.alert("incorrect");
+//             console.log(result);
+//             }
+//         }
+//     });
+
+// var submitbtn = document.createElement('button');
+// submitbtn.setAttribute('id','submit-btn');
+// submitbtn.innerHTML = "submit";
+// para.appendChild(submitbtn);
+// }
+
+var createQuiz = function(){
+for(i = 0; i<questions.length; i++){
+var answer = confirm(questions[i].q);
+if (
+    (answer === true && questions[i].a === 't') ||
+    (answer === false && questions[i].a === 'f')
+  ) {
+    correctAnswers++;
+    alert("Correct");
     }
+    else{
+        alert("Wrong");
+    }
+};
+alert("Your score: " + correctAnswers +"/" + questions.length);
+var score = correctAnswers;
+var initials = window.prompt("Please enter your initials to save your score");
+localStorage.setItem(initials, score);
+window.location.href = "./results.html";
+var s = document.getElementById("scores");
+s.createElement("ul");
+s.innerHTML = "<li>"+ key +"</li>"
+document.appendChild(s);
 }
-
 var start_btn = document.getElementById("start-btn");
 start_btn.addEventListener("click", createQuiz);
