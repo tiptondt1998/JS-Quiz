@@ -11,7 +11,7 @@ const startButton = document.getElementById('start-btn');
 let gameState = 'waiting';
 let currentQuestion = 0;
 let score = 0;
-let timeRemaining = 5;
+let timeRemaining = 45;
 let initials;
 
 function handleCorrect (index) {
@@ -33,8 +33,9 @@ function displayResult () {
   resultsDisplay.style.visibility = 'visible';
   resultsDisplay.innerHTML = `
     <h1>GAME OVER</h1>
-    <h3>${initials.toUpperCase()} Score: ${score}</h3>
+    <h3>${initials} Score: ${score}</h3>
   `;
+  localStorage.setItem(initials, score);
 }
 
 function displayQuestion (index) {
@@ -69,14 +70,17 @@ startButton.addEventListener('click', () => {
   scoreDisplay.innerHTML = score.toString();
   timerDisplay.innerHTML = timeRemaining.toString();
   displayQuestion(0);
+  var x =0;
   let refreshId = setInterval(function() {
     timeRemaining -= 1;
     timerDisplay.innerHTML = timeRemaining.toString();
-    if (timeRemaining === 0) {
+    if (timeRemaining === 0 && x===0) {
       displayResult();
       clearInterval(refreshId);
     }
+
   }, 1000);
+  x++;
 });
 
 correctAnswers = 0;
