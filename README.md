@@ -1,3 +1,3 @@
 # JS-Quiz
 timed javascript quiz
-![JSQuiz](./JSQuiz.jpeg)
+![image](https://i.postimg.cc/kXxy0Hvq/JSQuiz.jpg)
