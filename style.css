@@ -7,24 +7,34 @@ body{
 #start-btn{
     background-color: white;
     border-radius: 50%;
+    display: block;
     width: 200px;
     height: 100px;
-    margin-left: 45%;
+    margin: 0 auto;
 }
 #title{
-    margin-left: 40%;
-    margin-top: 15%;
+    text-align: center;
 }
-/* button{
-    background-color: white;
-    border-radius: 50%;
-    width: 200px;
-    height: 100px;
-    margin-left: 40%;
+
+#main-quiz, #results {
+    visibility: hidden;
 }
-h1{
-    margin-left: 40%;
-} */
+
+.padded-button {
+    background-color: #bbbbbb;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    display: inline;
+}
+
+
+#heads-up-display {
+    width: 90%;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
 @media screen and (max-width: 800px){
 
     #title{

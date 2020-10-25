@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css"/>
-    <title>JavaScript Quiz</title>
-</head>
-<body>
-    <div id="title">
-    <h1>Welcome to the quiz</h1>
-    </div>
-    <button id="start-btn">Click here to start</button>
-</body>
-<script src="./script.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css"/>
+        <title>JavaScript Quiz</title>
+    </head>
+    <body>
+        <div id="entrance">
+            <div id="title">
+                <h1>Welcome to the quiz</h1>
+            </div>
+            <button id="start-btn">Click here to start</button>
+        </div>
+        <div id="main-quiz">
+            <div id="heads-up-display">
+                <div class="padded-button" id="score-div"></div>
+                <div class="padded-button" id="timer-div"></div>
+            </div>
+            <h1 id="question"></h1>
+            <ul id="answers"></ul>
+        </div>
+        <div id="results"></div>
+        <script src="./script.js"></script>
+    </body>
 </html>
